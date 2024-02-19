@@ -1,10 +1,8 @@
 import PageSection from "@/components/PageSection";
 import Slider from "@/components/Slider";
 import { capitalizeSentenceFirstLetters } from "@/functions/utils";
-import { Fragment, useState } from "react";
 import {
   Button,
-  ButtonGroup,
   Card,
   CardBody,
   Col,
@@ -12,7 +10,6 @@ import {
   ModalBody,
   ModalFooter,
   ModalHeader,
-  Row,
 } from "react-bootstrap";
 
 interface post {
@@ -28,7 +25,7 @@ interface post {
 }
 
 const BlogSection = () => {
-  const [pickedCategory, setPickedCategory] = useState("");
+  // const [pickedCategory, setPickedCategory] = useState("");
 
   const defaultPost = {
     date: "",
@@ -43,9 +40,9 @@ const BlogSection = () => {
     ],
   };
 
-  const [pickedPost, setPickedPost] = useState<post>(defaultPost);
+  // const [pickedPost, setPickedPost] = useState<post>(defaultPost);
 
-  const closeModal = () => setPickedPost(defaultPost);
+  // const closeModal = () => setPickedPost(defaultPost);
 
   const posts = [
     {
@@ -253,7 +250,7 @@ const BlogSection = () => {
 
   return (
     <PageSection title="Blog" id="blog" color="light">
-      <Col md={12} className="text-center p-0 m-0 mb-4">
+      {/* <Col md={12} className="text-center p-0 m-0 mb-4">
         <ButtonGroup>
           <Button
             onClick={() => setPickedCategory("")}
@@ -272,16 +269,16 @@ const BlogSection = () => {
             </Button>
           ))}
         </ButtonGroup>
-      </Col>
+      </Col> */}
 
       <Col md={12} className="text-center p-0 m-0">
         <Slider
           navigation
           indicators
           slides={posts
-            .filter(({ category }) =>
-              pickedCategory ? category == pickedCategory : true
-            )
+            // .filter(({ category }) =>
+            //   pickedCategory ? category == pickedCategory : true
+            // )
             .map((post, i) => {
               const { date, title, img, category } = post;
 
@@ -293,7 +290,7 @@ const BlogSection = () => {
                 >
                   <Card
                     role="button"
-                    onClick={() => setPickedPost(post)}
+                    // onClick={() => setPickedPost(post)}
                     className="w-100 h-100"
                     style={{ display: "table-cell" }}
                   >
@@ -325,11 +322,15 @@ const BlogSection = () => {
         />
       </Col>
 
-      <Modal show={!!pickedPost.title} onHide={closeModal} size="xl">
+      <Modal
+        // show={!!pickedPost.title}
+        // onHide={closeModal}
+        size="xl"
+      >
         <ModalHeader closeButton />
 
         <ModalBody className="px-4">
-          <Row>
+          {/* <Row>
             <Col md={4}>
               <img src={`/images/articles/${pickedPost.img}`} width="100%" />
             </Col>
@@ -372,11 +373,14 @@ const BlogSection = () => {
                 </Fragment>
               ))}
             </Col>
-          </Row>
+          </Row> */}
         </ModalBody>
 
         <ModalFooter>
-          <Button variant="dark" onClick={closeModal}>
+          <Button
+            variant="dark"
+            // onClick={closeModal}
+          >
             Close
           </Button>
         </ModalFooter>

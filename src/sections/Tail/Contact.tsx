@@ -3,7 +3,6 @@ import { faLinkedinIn, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
-import { useState } from "react";
 import {
   Alert,
   Button,
@@ -74,8 +73,6 @@ export const socialLinksList = [
 ];
 
 const ContactSection = () => {
-  const [showMsg, setShowMsg] = useState(false);
-
   const inputs = [
     { name: "name", title: "Name", type: "text", required: true },
     { name: "subject", title: "Subject", type: "text", required: false },
@@ -97,7 +94,6 @@ const ContactSection = () => {
   ];
 
   const onSubmit = (e: any) => {
-    setShowMsg(false);
     e.preventDefault();
 
     const values = inputs.reduce(
@@ -109,7 +105,7 @@ const ContactSection = () => {
     );
 
     console.log({ values });
-    setShowMsg(true);
+    alert("You're message has been sent. TQ :)");
   };
 
   return (
@@ -189,14 +185,6 @@ const ContactSection = () => {
                 </FormGroup>
               </Col>
             ))}
-
-            <Col md={9} lg={10}>
-              {showMsg && (
-                <Alert className="my-3">
-                  {"You're message has been sent. TQ :)"}
-                </Alert>
-              )}
-            </Col>
 
             <Col md={3} lg={2}>
               <Button
