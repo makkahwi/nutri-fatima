@@ -1,13 +1,15 @@
 :root {
-  --brand: #247a4b;
-  --brand-dark: #123f2a;
-  --brand-soft: #e8f4ed;
+  --brand: #2f7d4f;
+  --brand-dark: #1f5638;
+  --brand-soft: #e7f2eb;
   --ink: #18221d;
   --muted: #66736c;
   --surface: #ffffff;
   --warm: #f8f4ec;
-  --line: rgba(18, 63, 42, 0.1);
-  --shadow: 0 24px 70px rgba(18, 63, 42, 0.1);
+  --green-rgb: 47, 125, 79;
+  --green-dark-rgb: 31, 86, 56;
+  --line: rgba(var(--green-dark-rgb), 0.1);
+  --shadow: 0 24px 70px rgba(var(--green-dark-rgb), 0.1);
 }
 
 * {
@@ -27,7 +29,8 @@ html {
 }
 
 body {
-  line-height: 1.8;
+  line-height: 1.75;
+  font-weight: 400;
 }
 
 a {
@@ -72,8 +75,8 @@ li::marker {
 }
 
 .site-nav {
-  min-height: 82px;
-  background: rgba(18, 63, 42, 0.7);
+  min-height: 76px;
+  background: rgba(var(--green-dark-rgb), 0.82);
   border-bottom: 0;
   backdrop-filter: blur(18px);
 }
@@ -84,7 +87,7 @@ li::marker {
 
 .site-nav-link {
   color: rgba(255, 255, 255, 0.88) !important;
-  font-weight: 700;
+  font-weight: 600;
   padding-inline: 0.9rem !important;
 }
 
@@ -100,10 +103,10 @@ li::marker {
 .hero-section {
   position: relative;
   min-height: 100vh;
-  padding: 17vh 7vw 8vh;
+  padding: 15vh 7vw 7vh;
   overflow: hidden;
   background:
-    linear-gradient(90deg, rgba(18, 63, 42, 0.92), rgba(18, 63, 42, 0.58) 52%, rgba(18, 63, 42, 0.12)),
+    linear-gradient(90deg, rgba(var(--green-dark-rgb), 0.92), rgba(var(--green-dark-rgb), 0.58) 52%, rgba(var(--green-dark-rgb), 0.12)),
     url("/images/BG.jpg") top center / cover no-repeat;
 }
 
@@ -131,21 +134,22 @@ li::marker {
   background: transparent;
   border: 0;
   border-radius: 0;
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .hero-title {
   color: #fff;
-  font-size: clamp(3.4rem, 8vw, 7rem);
-  font-weight: 900;
+  font-size: clamp(3.1rem, 7vw, 6.35rem);
+  font-weight: 700;
   line-height: 1.05;
 }
 
 .hero-subtitle {
   max-width: 680px;
-  margin: 1.6rem 0 0;
+  margin: 1.35rem 0 0;
   color: rgba(255, 255, 255, 0.88);
-  font-size: clamp(1.1rem, 2vw, 1.45rem);
+  font-size: clamp(1.05rem, 1.75vw, 1.32rem);
+  line-height: 1.9;
 }
 
 .hero-actions {
@@ -157,9 +161,9 @@ li::marker {
 
 .btn-hero-primary,
 .btn-hero-secondary {
-  padding: 0.85rem 1.4rem;
+  padding: 0.78rem 1.25rem;
   border-radius: 999px;
-  font-weight: 900;
+  font-weight: 700;
 }
 
 .btn-hero-primary {
@@ -203,7 +207,7 @@ li::marker {
 }
 
 .hero-photo {
-  min-height: 520px;
+  min-height: 480px;
   background: url("/images/gallery/Food.jpg") center / cover no-repeat;
   box-shadow: none;
   clip-path: inset(0 round 44% 44% 4rem 4rem);
@@ -212,7 +216,7 @@ li::marker {
 
 .page-section {
   position: relative;
-  padding: 8rem 11vw 6rem;
+  padding: 6.5rem 11vw 5rem;
   min-height: auto;
 }
 
@@ -223,9 +227,10 @@ li::marker {
 .section-title {
   position: relative;
   width: fit-content;
-  margin: 0 auto 3.5rem;
+  margin: 0 auto 3rem;
   padding-bottom: 0;
-  font-weight: 900;
+  font-size: clamp(2rem, 3.5vw, 3.25rem);
+  font-weight: 700;
   letter-spacing: 0;
 }
 
@@ -254,7 +259,7 @@ li::marker {
 
 .text-block {
   text-align: justify;
-  line-height: 2.4rem;
+  line-height: 2.25rem;
 }
 
 .text-justify {
@@ -274,7 +279,7 @@ li::marker {
   grid-template-columns: minmax(220px, 0.42fr) 1fr;
   gap: 2rem;
   align-items: start;
-  padding: 2rem 0;
+  padding: 1.65rem 0;
   border-top: 1px solid var(--line);
   transition: color 180ms ease;
 }
@@ -300,8 +305,8 @@ li::marker {
 }
 
 .belief-icon {
-  margin-bottom: 1.4rem;
-  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-size: 1.75rem;
   opacity: 0.9;
 }
 
@@ -332,7 +337,7 @@ li::marker {
 .contact-chip {
   align-items: center;
   justify-content: center;
-  min-height: 78px;
+  min-height: 64px;
   color: var(--brand);
   border-bottom: 1px solid var(--line);
 }
@@ -349,7 +354,7 @@ li::marker {
 
 .form-control {
   border: 0;
-  border-bottom: 1px solid rgba(18, 63, 42, 0.22);
+  border-bottom: 1px solid rgba(var(--green-dark-rgb), 0.22);
   border-radius: 0;
   background: transparent;
 }
@@ -361,7 +366,7 @@ li::marker {
 }
 
 .gallery-break {
-  height: min(70vh, 720px);
+  height: min(62vh, 620px);
   background:
     linear-gradient(180deg, rgba(248, 244, 236, 0.06), rgba(248, 244, 236, 0.34)),
     url("/images/gallery/BG.jpeg") center / cover no-repeat;
@@ -378,7 +383,7 @@ li::marker {
 
 .app-state h1 {
   color: var(--brand);
-  font-weight: 900;
+  font-weight: 700;
 }
 
 .app-state p {
@@ -408,7 +413,7 @@ li::marker {
 
 @media screen and (max-width: 992px) {
   .hero-section {
-    padding-top: 14vh;
+    padding-top: 12vh;
   }
 
   .hero-visual {
@@ -432,11 +437,11 @@ li::marker {
 
 @media screen and (max-width: 768px) {
   .site-nav {
-    min-height: 74px;
+    min-height: 68px;
   }
 
   .hero-section {
-    padding: 13vh 1.25rem 5rem;
+    padding: 11vh 1.25rem 4.5rem;
   }
 
   .hero-actions .btn {
@@ -444,12 +449,12 @@ li::marker {
   }
 
   .page-section {
-    padding: 5rem 1.15rem 4rem;
+    padding: 4.25rem 1.15rem 3.5rem;
   }
 
   .section-title {
-    margin-bottom: 2.5rem;
-    font-size: 2rem;
+    margin-bottom: 2.15rem;
+    font-size: 1.85rem;
   }
 
   .text-block,

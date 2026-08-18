@@ -1,8 +1,11 @@
 "use client";
 
 import { sendContacts } from "@/api";
+import { FormEvent, useState } from "react";
 
 const ContactForm = () => {
+  const [isSending, setIsSending] = useState(false);
+
   const inputs = [
     { name: "name", title: "الاسم", type: "text", required: true },
     {
@@ -27,22 +30,33 @@ const ContactForm = () => {
     },
   ];
 
-  const onSubmit = (e: any) => {
+  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    if (isSending) return;
+
+    const form = e.currentTarget;
     const values = inputs.reduce(
       (final, current) => ({
         ...final,
-        [current.name]: e.target[current.name].value,
+        [current.name]: form.elements.namedItem(current.name)
+          ? (form.elements.namedItem(current.name) as HTMLInputElement).value
+          : "",
       }),
-      {}
+      {},
     );
 
-    sendContacts({ ...values, timestamp: new Date() })
-      .then(() => alert("Your message has been sent. TQ :)"))
-      .catch(() => alert("Something went wrong, plz try again. Sorry :("));
+    setIsSending(true);
 
-    alert("You're message has been sent. TQ :)");
+    try {
+      await sendContacts({ ...values, timestamp: new Date().toISOString() });
+      form.reset();
+      alert("تم إرسال رسالتك بنجاح. شكرًا لتواصلك.");
+    } catch {
+      alert("تعذر إرسال الرسالة. يرجى المحاولة مرة أخرى.");
+    } finally {
+      setIsSending(false);
+    }
   };
 
   return (
@@ -77,8 +91,14 @@ const ContactForm = () => {
         ))}
 
         <div className="col-lg-2 col-md-3 float-end">
-          <button className="btn btn-success p-3 px-4 text-white" type="submit">
-            <h6 className="text-center p-0 m-0">تواصل الآن</h6>
+          <button
+            className="btn btn-success p-3 px-4 text-white"
+            type="submit"
+            disabled={isSending}
+          >
+            <h6 className="text-center p-0 m-0">
+              {isSending ? "جاري الإرسال..." : "تواصلوا الآن"}
+            </h6>
           </button>
         </div>
       </div>

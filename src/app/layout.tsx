@@ -2,13 +2,16 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { IBM_Plex_Sans_Arabic } from "next/font/google";
 import "react-slideshow-image/dist/styles.css";
 import "./style.scss";
 import "./style.css";
 import Script from "next/script";
 
-const inter = Inter({ subsets: ["latin"] });
+const arabicFont = IBM_Plex_Sans_Arabic({
+  subsets: ["arabic", "latin"],
+  weight: ["400", "500", "600", "700"],
+});
 
 export const metadata: Metadata = {
   title:
@@ -25,7 +28,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
 
-      <body className={inter.className}>
+      <body className={arabicFont.className}>
         <main>{children}</main>
 
         <Script

@@ -63,7 +63,7 @@ const NavbarComp = () => {
         </NavbarCollapse>
 
         <a href="#contact" className="text-capitalize nav-cta">
-          <div className="btn btn-warning">احجزي استشارة</div>
+          <div className="btn btn-warning">احجزوا أول استشارة</div>
         </a>
       </Container>
     </Navbar>

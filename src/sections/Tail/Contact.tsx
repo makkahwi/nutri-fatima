@@ -12,7 +12,7 @@ export const socialLinksList = [
     icon: faWhatsapp,
     link: "https://wasap.my/962797035869",
     label: "عبر الواتس اب في أي وقت",
-    color: "#1fb355",
+    color: "#2f7d4f",
     common: true,
   },
   {
@@ -20,7 +20,7 @@ export const socialLinksList = [
     icon: faEnvelope,
     link: "mailto:fatemamohammad2008@gmail.com",
     label: "راسلني على البريد الإلكتروني",
-    color: "#388e3c",
+    color: "#1f5638",
     common: true,
   },
 ];
@@ -35,10 +35,10 @@ const ContactSection = () => {
   ];
 
   return (
-    <PageSection title="تواصل معي الآن" id="contact">
+    <PageSection title="تواصلوا معي الآن" id="contact">
       <div className="col-md-12 text-center p-0 m-0">
         <h5 className="mb-5 text-success section-lead">
-          في أول تواصل بيننا نرتّب الصورة بوضوح قبل وضع أي خطة.
+          في أول تواصل بيننا نقوم بترتيب الصورة بوضوح قبل وضع أي خطة.
         </h5>
 
         <div className="row justify-content-center">
