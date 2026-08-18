@@ -1,7 +1,6 @@
 "use client";
 
 import { Container, Nav, Navbar, NavItem, NavLink } from "react-bootstrap";
-import { Link } from "react-scroll";
 
 import { links } from "../Navbar";
 
@@ -11,11 +10,11 @@ const FooterNav = () => {
       <Container>
         <Nav className="mx-auto">
           {links.map(({ title, link }, i) => (
-            <Link to={link} role="button" key={i}>
-              <NavItem>
-                <NavLink className="text-white">{title}</NavLink>
-              </NavItem>
-            </Link>
+            <NavItem key={i}>
+              <NavLink href={`#${link}`} role="button" className="text-white">
+                {title}
+              </NavLink>
+            </NavItem>
           ))}
         </Nav>
       </Container>

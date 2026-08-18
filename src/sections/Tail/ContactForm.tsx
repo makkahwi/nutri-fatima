@@ -46,11 +46,11 @@ const ContactForm = () => {
   };
 
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={onSubmit} className="contact-form">
       <div className="row">
         {inputs.map(({ name, title, required, type, fullWidth }, i) => (
           <div className={`col-lg-${fullWidth ? 12 : 6} mb-2`} key={i}>
-            <div className="form-label text-success">
+            <div className="form-label text-success fw-bold">
               {title}
               {required ? <span className="text-danger">{" *"}</span> : ""}
             </div>
@@ -77,7 +77,7 @@ const ContactForm = () => {
         ))}
 
         <div className="col-lg-2 col-md-3 float-end">
-          <button className="btn btn-success p-3 text-white" type="submit">
+          <button className="btn btn-success p-3 px-4 text-white" type="submit">
             <h6 className="text-center p-0 m-0">تواصل الآن</h6>
           </button>
         </div>

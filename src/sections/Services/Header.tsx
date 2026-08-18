@@ -14,42 +14,42 @@ const HeaderSection = () => {
       icon: faPersonArrowUpFromLine,
       title: "خطط غذائية مخصصة",
       content:
-        "تصميم نظام غذائي متوازن يناسب احتياجاتك الشخصية وأهدافك الصحية، مع الحفاظ على شعورك بالشبع والرضا طوال اليوم.",
+        "برنامج متوازن يناسب حالتك، يومك، وهدفك الصحي مع وجبات مشبعة وخيارات مرنة.",
     },
     {
       icon: faPeopleArrows,
       title: "استشارات غذائية شخصية",
       content:
-        "جلسات فردية لتحليل حالتك الصحية وعاداتك الغذائية، وتقديم خطة قابلة للتنفيذ تضمن استمتاعك بالأطعمة المفضلة لديك بكميات مناسبة. يمكن إجراء الجلسات عبر الإنترنت لتناسب راحتك وظروفك.",
+        "جلسات فردية لفهم تاريخك الصحي وعاداتك الغذائية، ثم تحويلها إلى خطوات عملية يمكن الالتزام بها حضوريًا أو عبر الإنترنت.",
     },
     {
       icon: faHourglassHalf,
       title: "متابعة مستمرة وتحفيز",
       content:
-        "دعمك في كل خطوة من رحلتك الصحية، مع تعديلات مستمرة على خطتك الغذائية لضمان تحقيق النتائج المرجوة.",
+        "متابعة تقدمك وتعديل الخطة عند الحاجة حتى تبقى النتائج واقعية وقابلة للاستمرار.",
     },
     {
       icon: faWeightScale,
       title: "برامج إدارة الوزن",
       content:
-        "خطط غذائية مرنة وصحية تساعدك في الوصول إلى الوزن المثالي دون الشعور بالحرمان.",
+        "خطط مرنة لخسارة الوزن أو زيادته بطريقة صحية، دون قوائم ممنوعات قاسية.",
     },
     {
       icon: faMagnifyingGlassChart,
       title: "تحليل عاداتك الغذائية",
       content:
-        "مراجعة دقيقة لاختياراتك الغذائية الحالية، مع تقديم نصائح لتحسينها وضمان استفادتك من جميع العناصر الغذائية الضرورية.",
+        "قراءة دقيقة لاختياراتك الحالية ونقاط القوة والتحدي فيها، ثم تحسينها تدريجيًا.",
     },
   ];
 
   return (
     <PageSection title="خدماتي المصممة لك" id="services">
       <div className="col-xl-12">
-        <ul className="list-group">
+        <ul className="service-grid list-unstyled">
           {list.map(({ title, content, icon }, i) => (
-            <li className="list-group-item list-group-item-action" key={i}>
+            <li className="service-card" key={i}>
               <h4 className="text-success lh-lg d-flex">
-                <div className="text-success mx-2 h1">
+                <div className="service-icon text-success mx-2 h1">
                   <FontAwesomeIcon icon={icon} />
                 </div>
                 {title}

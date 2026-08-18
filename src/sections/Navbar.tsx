@@ -10,14 +10,13 @@ import {
   NavbarToggle,
   NavLink,
 } from "react-bootstrap";
-import { animateScroll, Link } from "react-scroll";
 
 export const links = [
   { title: "عني", link: "about" },
   { title: "خدماتي", link: "services" },
-  { title: "الرجيم", link: "fears" },
-  { title: "نظام شامل", link: "comprehensive" },
-  { title: "الموسوعة", link: "pedia" },
+  { title: "بدون حرمان", link: "fears" },
+  { title: "نمط متوازن", link: "comprehensive" },
+  { title: "مصادر", link: "pedia" },
   // { title: "برامج التغذية", link: "programs" },
   // { title: "الموسوعة الغذائية", link: "info" },
   // { title: "شهادات العملاء", link: "testimonials" },
@@ -27,14 +26,16 @@ export const links = [
 const NavbarComp = () => {
   return (
     <Navbar
-      style={{ minHeight: "10vh" }}
-      className="px-5 m-0 w-100 bg-success"
+      className="site-nav px-3 px-lg-5 m-0 w-100"
       fixed="top"
       expand="lg"
       collapseOnSelect
     >
       <Container>
-        <NavbarBrand onClick={() => animateScroll.scrollToTop()} role="button">
+        <NavbarBrand
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          role="button"
+        >
           <Image
             src="/images/logo/logo-w.png"
             alt="Logo"
@@ -50,11 +51,9 @@ const NavbarComp = () => {
           <Nav className="me-auto" navbar>
             {links.map(({ title, link }, i) => (
               <NavLink
-                as={Link}
-                to={link}
-                className="text-white"
+                href={`#${link}`}
+                className="site-nav-link"
                 role="button"
-                href="#"
                 key={i}
               >
                 {title}
@@ -63,16 +62,9 @@ const NavbarComp = () => {
           </Nav>
         </NavbarCollapse>
 
-        <Link
-          to="contact"
-          className="text-capitalize"
-          style={{
-            zIndex: 1000,
-            fontSize: "calc(10px + 0.15vw)",
-          }}
-        >
-          <div className="btn btn-warning">احجز الآن</div>
-        </Link>
+        <a href="#contact" className="text-capitalize nav-cta">
+          <div className="btn btn-warning">احجزي استشارة</div>
+        </a>
       </Container>
     </Navbar>
   );

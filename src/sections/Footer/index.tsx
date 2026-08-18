@@ -3,7 +3,6 @@ import Image from "next/image";
 import { Fragment } from "react";
 
 import { socialLinksList } from "../Tail/Contact";
-import FooterNav from "./Nav";
 
 const FooterSection = () => {
   return (

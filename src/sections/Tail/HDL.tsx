@@ -2,9 +2,9 @@ import PageSection from "@/components/PageSection";
 
 const HdlSection = () => {
   const list = [
-    "لجعل رحلتك الصحية أكثر سهولة وفعالية، أوصي باستخدام أداة HEAL المجانية, التي تتيح لك تتبع جميع عاداتك الصحية.",
-    "الأداة متوفرة حاليًا باللغة الإنجليزية، وستطلق قريبًا نسخة باللغة العربية لتلبية احتياجات جميع عملائنا.",
-    "هذا الأداة تم تطويرها من قِبل نفس مطور هذا الموقع الإلكتروني, لضمان توافقها مع أعلى معايير الجودة.",
+    "أداة HEAL المجانية تساعدك على متابعة عاداتك الصحية اليومية بطريقة بسيطة.",
+    "يمكنك تسجيل السلوكيات المرتبطة بالأكل، الحركة، النوم، والماء لتكوين صورة أوضح عن تقدمك.",
+    "الأداة متاحة حاليًا باللغة الإنجليزية، مع خطة لإضافة تجربة عربية لاحقًا.",
   ];
 
   return (
@@ -30,7 +30,9 @@ const HdlSection = () => {
       <div className="col-xl-12 px-3 order-3 text-center">
         <a href="https://heal-tracker.vercel.app/" target="_blank">
           {" "}
-          <button className="btn btn-success text-white">استخدمها الآن</button>
+          <button className="btn btn-success text-white px-4 py-3">
+            جرّب الأداة المجانية
+          </button>
         </a>
       </div>
     </PageSection>

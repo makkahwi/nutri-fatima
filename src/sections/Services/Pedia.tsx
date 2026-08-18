@@ -29,16 +29,16 @@ const JoinMeSection = () => {
   return (
     <PageSection title="الموسوعة الغذائية" color="light" id="pedia">
       <div className="col-md-12 mb-4">
-        <h5 className="text-block text-justify">
-          قريباً ستتوفر موسوعة غذائية شاملة ومفيدة لكم. لكن في الوقت الراهن,
-          يمكنكم تصفح المصادر الخاصة بي...
+        <h5 className="text-block text-justify section-lead">
+          إلى حين إطلاق مكتبة محتوى عربية خاصة بالموقع، جمعت لك مصادر موثوقة
+          تساعدك على قراءة معلومات غذائية أدق واتخاذ قرارات أفضل.
         </h5>
       </div>
 
       <div className="col-md-12 text-success">
-        <ul className="list-group">
+        <ul className="resource-list list-unstyled">
           {resources.map(({ link, text }, i) => (
-            <li className="list-group-item" key={i}>
+            <li className="resource-item" key={i}>
               <a href={link} target="_blank">
                 <h5 className="my-3">{text}</h5>
               </a>

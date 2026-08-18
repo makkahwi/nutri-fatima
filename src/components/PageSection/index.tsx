@@ -17,24 +17,16 @@ const PageSection = ({
 }: props) => {
   return (
     <div
-      style={
-        noMinHeight
-          ? {
-              padding: "15vh 15vw 10vh 15vw",
-            }
-          : {
-              padding: "15vh 15vw 10vh 15vw",
-              minHeight: "90vh",
-            }
-      }
-      className={`row bg-${color} justify-content-center`}
+      className={`page-section row bg-${color} justify-content-center ${
+        noMinHeight ? "page-section--compact" : ""
+      }`}
       id={id}
     >
       {aboveTitle}
 
       {title && (
         <div className="col-12">
-          <h1 className="mb-5 pb-5 text-center text-success">{title}</h1>
+          <h1 className="section-title text-center text-success">{title}</h1>
         </div>
       )}
 
