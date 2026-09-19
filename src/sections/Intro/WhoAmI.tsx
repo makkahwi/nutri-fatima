@@ -12,13 +12,21 @@ const WhoAmISection = async () => {
   );
 
   return (
-    <PageSection title="عني" id="about">
+    <PageSection
+      title="أهلًا، أنا فاطمة"
+      aboveTitle={
+        <span className="eyebrow section-eyebrow" lang="en" dir="ltr">
+          YOUR PARTNER IN WELLNESS
+        </span>
+      }
+      id="about"
+    >
       <div className="col-md-12 content-panel">
         <NumberCounters />
 
         <h5 className="text-justify lh-lg text-success">
-          أنا فاطمة محمد، أخصائية تغذية سريرية وحميات حاصلة على درجة
-          البكالوريوس في التغذية السريرية والحميات من{" "}
+          أنا فاطمة محمد، أخصائية تغذية سريرية وحميات حاصلة على درجة البكالوريوس
+          في التغذية السريرية والحميات من{" "}
           <LinkComp
             link="https://hu.edu.jo"
             text="الجامعة الهاشمية"
@@ -30,28 +38,27 @@ const WhoAmISection = async () => {
             text="وزارة الصحة الأردنية"
             image="/images/logos/moh.png"
           />
-          . أقدّم إرشادًا غذائيًا مبنيًا على العلم ومصممًا لحياة الناس
-          اليومية، مع خطط قابلة للتطبيق وليست مجرد تعليمات عامة. أفتخر بعضويتي
-          في{" "}
+          . أقدّم إرشادًا غذائيًا مبنيًا على العلم ومصممًا لحياة الناس اليومية،
+          مع خطط قابلة للتطبيق وليست مجرد تعليمات عامة. أفتخر بعضويتي في{" "}
           <LinkComp
             link="https://www.facebook.com/jmylgdhwltgdhy/"
             text="جمعية الغذاء والتغذية الأردنية"
-            image="/images/logos/soc1.jpg"
+            image="/images/logos/soc1.png"
           />{" "}
           و
           <LinkComp
             link="https://www.facebook.com/JordanianDietitiansAssociation"
             text="جمعية أخصائيي التغذية العلاجية الأردنية"
-            image="/images/logos/soc2.jpg"
+            image="/images/logos/soc2.png"
           />
           ، وأسعى من خلالها لتعزيز الوعي الغذائي بأسلوب مهني قريب من الناس.
         </h5>
 
         <h5 className="text-justify lh-lg text-success my-5">
-          خلال أكثر من 5 سنوات، عملت مع مئات المراجعين على أهداف مختلفة: خسارة
+          خلال أكثر من 7 سنوات، عملت مع مئات المراجعين على أهداف مختلفة: خسارة
           الوزن، زيادة الوزن بشكل صحي، تحسين المؤشرات الصحية، وبناء علاقة أهدأ
-          مع الطعام. هدفي أن نصل إلى نتيجة مستدامة تناسب أسلوب حياتك، دون
-          حرمان أو ضغط زائد.
+          مع الطعام. هدفي أن نصل إلى نتيجة مستدامة تناسب أسلوب حياتك، دون حرمان
+          أو ضغط زائد.
         </h5>
 
         <h5 className="text-justify lh-lg text-success fw-bold mt-4">

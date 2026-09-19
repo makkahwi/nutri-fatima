@@ -25,59 +25,17 @@ export const socialLinksList = [
   },
 ];
 
-const ContactSection = () => {
-  const whatYouWillGet = [
-    "تحليل عاداتك الحالية",
-    "فهم تجاربك السابقة",
-    "تحديد أهدافك ودوافعك",
-    "مراجعة وضعك الصحي",
-    "بناء خطة مناسبة",
-  ];
-
-  return (
-    <PageSection title="تواصلوا معي الآن" id="contact">
-      <div className="col-md-12 text-center p-0 m-0">
-        <h5 className="mb-5 text-success section-lead">
-          في أول تواصل بيننا نقوم بترتيب الصورة بوضوح قبل وضع أي خطة.
-        </h5>
-
-        <div className="row justify-content-center">
-          {whatYouWillGet.map((point, i) => (
-            <div className="col-6 col-lg-3 col-xl-2 my-3" key={i}>
-              <div className="contact-chip d-flex w-100 h-100 p-3">
-                <h6 className="text-success m-auto">{point}</h6>
-              </div>
-            </div>
-          ))}
-        </div>
+const ContactSection = () => (
+  <PageSection title="لنزرع بداية جديدة" id="contact" aboveTitle={<span className="eyebrow section-eyebrow" lang="en" dir="ltr">YOUR NEXT CHAPTER</span>}>
+    <div className="contact-layout">
+      <div className="contact-intro">
+        <h3>خطوتك الأولى تبدأ<br />بحديث بسيط.</h3>
+        <p>احكِ لي عن أهدافك وتجاربك. نراجع عاداتك ووضعك الصحي معًا، ونبني خطة تناسبك.</p>
+        <ul className="consultation-list"><li>نفهم روتينك واحتياجاتك</li><li>نحدد أهدافًا واقعية</li><li>نرسم خطوتك القادمة</li></ul>
+        <div className="contact-links">{socialLinksList.map(({ name, icon, link, label }) => <a key={name} href={link} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={icon} /><span>{label}</span><span aria-hidden="true">↗</span></a>)}</div>
       </div>
-
-      <div className="col-md-12 text-center p-0 m-0 my-5">
-        <div className="row justify-content-center">
-          {socialLinksList
-            .filter(({ common }) => common)
-            .map(({ name, icon, link, label, color }, i) => (
-              <div className="col-6 col-md-4 col-lg-3" key={i}>
-                <a href={link} target="_blank">
-                  <button
-                    style={{ backgroundColor: color }}
-                    className="btn btn-transparent p-3 my-3 w-100 contact-button"
-                  >
-                    <h6 className="text-center text-white p-0 m-0">
-                      <FontAwesomeIcon icon={icon} /> {label}
-                    </h6>
-                  </button>
-                </a>
-              </div>
-            ))}
-        </div>
-      </div>
-
-      <div className="col-md-12 p-0 m-0">
-        <ContactForm />
-      </div>
-    </PageSection>
-  );
-};
-
+      <div className="contact-form-panel"><h3>يسعدني أن أسمع منك</h3><ContactForm /></div>
+    </div>
+  </PageSection>
+);
 export default ContactSection;

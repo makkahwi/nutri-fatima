@@ -14,7 +14,7 @@ const ContactForm = () => {
       type: "email",
       required: false,
     },
-    { name: "phone", title: "رقم الهاتف", type: "text", required: true },
+    { name: "phone", title: "رقم الهاتف", type: "tel", required: true },
     {
       name: "subject",
       title: "عنوان الرسالة",
@@ -64,13 +64,14 @@ const ContactForm = () => {
       <div className="row">
         {inputs.map(({ name, title, required, type, fullWidth }, i) => (
           <div className={`col-lg-${fullWidth ? 12 : 6} mb-2`} key={i}>
-            <div className="form-label text-success fw-bold">
+            <label htmlFor={name} className="form-label text-success fw-bold">
               {title}
               {required ? <span className="text-danger">{" *"}</span> : ""}
-            </div>
+            </label>
 
             {type === "textarea" ? (
               <textarea
+                rows={4}
                 id={name}
                 name={name}
                 placeholder={title}
@@ -90,9 +91,9 @@ const ContactForm = () => {
           </div>
         ))}
 
-        <div className="col-lg-2 col-md-3 float-end">
+        <div className="col-12 mt-3">
           <button
-            className="btn btn-success p-3 px-4 text-white"
+            className="btn btn-success p-3 px-4 text-white w-100"
             type="submit"
             disabled={isSending}
           >

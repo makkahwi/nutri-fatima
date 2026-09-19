@@ -33,19 +33,21 @@ const NavbarComp = () => {
     >
       <Container>
         <NavbarBrand
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          href="#home"
+          className="brand-lockup"
           role="button"
         >
           <Image
-            src="/images/logo/logo-w.png"
-            alt="Logo"
-            width={771 * 0.075}
-            height={771 * 0.075}
+            src="/images/logo/logo-c.png"
+            alt="شعار فاطمة محمد"
+            width={68}
+            height={68}
             priority
           />
+          <span className="brand-name">فاطمة محمد<small lang="en" dir="ltr">FATIMA MOHAMMAD</small></span>
         </NavbarBrand>
 
-        <NavbarToggle aria-controls="navbar-nav" className=" bg-white" />
+        <NavbarToggle aria-controls="navbar-nav" label="فتح قائمة التنقل" />
 
         <NavbarCollapse id="navbar-nav">
           <Nav className="me-auto" navbar>

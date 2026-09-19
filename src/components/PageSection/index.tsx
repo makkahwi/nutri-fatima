@@ -9,14 +9,14 @@ interface props {
 
 const PageSection = ({
   children = <></>,
-  color = "white",
+  color = "light",
   title,
   aboveTitle,
   noMinHeight,
   id,
 }: props) => {
   return (
-    <div
+    <section
       className={`page-section row bg-${color} justify-content-center ${
         noMinHeight ? "page-section--compact" : ""
       }`}
@@ -26,12 +26,12 @@ const PageSection = ({
 
       {title && (
         <div className="col-12">
-          <h1 className="section-title text-center text-success">{title}</h1>
+          <h2 className="section-title text-center text-success">{title}</h2>
         </div>
       )}
 
       {children}
-    </div>
+    </section>
   );
 };
 

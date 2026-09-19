@@ -1,8 +1,6 @@
 import WhoAmISection from "@/sections/Intro/WhoAmI";
 import { Fragment } from "react";
 
-import AboutIntroSection from "../Services/Intro";
-
 const IntroSections = () => {
   return (
     <Fragment>
@@ -10,7 +8,14 @@ const IntroSections = () => {
 
       {/* <GallerySection /> */}
 
-      <div className="gallery-break w-100 p-0 m-0" />
+      <div className="gallery-break">
+        <div>
+          <span className="eyebrow" lang="en" dir="ltr">
+            A LITTLE BALANCE, EVERY DAY
+          </span>
+          <p>تغيير بسيط اليوم. أثر أجمل يدوم.</p>
+        </div>
+      </div>
     </Fragment>
   );
 };

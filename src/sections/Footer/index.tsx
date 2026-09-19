@@ -1,57 +1,14 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
-import { Fragment } from "react";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { socialLinksList } from "../Tail/Contact";
-
-const FooterSection = () => {
-  return (
-    <Fragment>
-      <div className="row bg-success py-2">
-        <div className="col-12 text-center pb-2">
-          <Image
-            src="/images/logo/logo-w.png"
-            alt="Logo"
-            width={771 * 0.22}
-            height={771 * 0.22}
-            priority
-            role="button"
-          />
-        </div>
-
-        {/* <div className="col-12 text-center">
-          <FooterNav />
-        </div> */}
-
-        <div className="col-12 text-center">
-          <div className="btn-group">
-            {socialLinksList.map(({ name, icon, link, label, color }, i) => (
-              <div className="btn btn-link p-3 my-2" key={i}>
-                <a href={link} target="_blank" className="text-white">
-                  <FontAwesomeIcon icon={icon} />
-                </a>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      <div className="row py-5 bg-white">
-        <h6 className="text-center text-success">
-          جميع الحقوق محفوظة لـ <span className="text-success">فاطمة محمد</span>{" "}
-          © {new Date().getFullYear()}
-        </h6>
-
-        <a
-          href="https://www.Suhaib.dev/"
-          target="_blank"
-          className="text-center text-success"
-        >
-          <small>تصميم وتنفيذ صهيب أحمد</small>
-        </a>
-      </div>
-    </Fragment>
-  );
-};
-
+const FooterSection = () => (
+  <footer className="site-footer">
+    <div className="footer-main">
+      <a className="footer-brand" href="#home"><Image src="/images/logo/logo-w.png" alt="شعار فاطمة محمد" width={120} height={120} /><div><h2>فاطمة محمد</h2><span lang="en" dir="ltr">FATIMA MOHAMMAD</span><p>جذور صحية. حياة متوازنة.</p></div></a>
+      <nav className="footer-nav" aria-label="روابط أسفل الصفحة"><a href="#about">عن فاطمة</a><a href="#services">خدماتي</a><a href="#pedia">الموسوعة الغذائية</a><a href="#contact">تواصل معي</a></nav>
+      <div className="footer-social"><span>لنبقَ على تواصل</span><div>{socialLinksList.map(({ name, icon, link }) => <a key={name} href={link} target="_blank" rel="noopener noreferrer" aria-label={name}><FontAwesomeIcon icon={icon} /></a>)}</div></div>
+    </div>
+    <div className="footer-bottom"><small>© {new Date().getFullYear()} فاطمة محمد. جميع الحقوق محفوظة.</small><span lang="en" dir="ltr">GROW INTO YOUR WELLNESS.</span><a href="https://www.Suhaib.dev/" target="_blank" rel="noopener noreferrer"><small>تصميم وتنفيذ صهيب أحمد</small></a></div>
+  </footer>
+);
 export default FooterSection;

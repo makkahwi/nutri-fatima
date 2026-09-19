@@ -43,19 +43,20 @@ const HeaderSection = () => {
   ];
 
   return (
-    <PageSection title="خدماتي المصممة لك" id="services">
+    <PageSection title="لكل رحلة، عناية تناسبها" aboveTitle={<span className="eyebrow section-eyebrow" lang="en" dir="ltr">CARE THAT FITS YOUR LIFE</span>} id="services">
       <div className="col-xl-12">
         <ul className="service-grid list-unstyled">
           {list.map(({ title, content, icon }, i) => (
             <li className="service-card" key={i}>
-              <h4 className="text-success lh-lg d-flex">
+              <span className="service-number" lang="en" dir="ltr">0{i + 1}</span>
+              <h3 className="text-success lh-lg d-flex">
                 <div className="service-icon text-success mx-2 h1">
                   <FontAwesomeIcon icon={icon} />
                 </div>
                 {title}
-              </h4>
+              </h3>
 
-              <h5 className="text-justify text-black lh-lg">{content}</h5>
+              <p>{content}</p>
             </li>
           ))}
         </ul>

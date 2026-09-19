@@ -1,16 +1,35 @@
 import "@fortawesome/fontawesome-svg-core/styles.css";
-import "bootstrap/dist/css/bootstrap.min.css";
+
 
 import type { Metadata } from "next";
-import { IBM_Plex_Sans_Arabic } from "next/font/google";
+import localFont from "next/font/local";
 import "react-slideshow-image/dist/styles.css";
 import "./style.scss";
-import "./style.css";
+
 import Script from "next/script";
 
-const arabicFont = IBM_Plex_Sans_Arabic({
-  subsets: ["arabic", "latin"],
-  weight: ["400", "500", "600", "700"],
+const arabicFont = localFont({
+  src: [
+    { path: "../assets/fonts/ar/Alexandria-Regular.ttf", weight: "400" },
+    { path: "../assets/fonts/ar/Alexandria-Medium.ttf", weight: "500" },
+    { path: "../assets/fonts/ar/Alexandria-SemiBold.ttf", weight: "600" },
+    { path: "../assets/fonts/ar/Alexandria-Bold.ttf", weight: "700" },
+  ],
+  variable: "--font-arabic",
+  display: "swap",
+});
+
+const englishFont = localFont({
+  src: [
+    { path: "../assets/fonts/en/Montserrat-Regular.ttf", weight: "400" },
+    { path: "../assets/fonts/en/Montserrat-Medium.ttf", weight: "500" },
+    { path: "../assets/fonts/en/Montserrat-SemiBold.ttf", weight: "600" },
+    { path: "../assets/fonts/en/Montserrat-Bold.ttf", weight: "700" },
+  ],
+  variable: "--font-english",
+  fallback: [],
+  adjustFontFallback: false,
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -28,7 +47,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
 
-      <body className={arabicFont.className}>
+      <body className={`${arabicFont.variable} ${englishFont.variable}`}>
         <main>{children}</main>
 
         <Script

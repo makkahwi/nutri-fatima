@@ -4,19 +4,20 @@ import CountUp from "react-countup";
 
 const NumberCounters = () => {
   const stats = [
-    { title: "سنوات خبرة", count: 5 },
-    { title: "مراجع", count: 4200 },
+    { title: "سنوات خبرة", count: 7 },
+    { title: "مراجع", count: 400 },
   ];
 
   return (
-    <div className="row justify-content-center mb-5">
+    <div className="row justify-content-center stats-row">
       {stats.map(({ title, count }, i) => {
         return (
-          <div className="col-6 col-md-4 my-auto text-center my-5" key={i}>
-            <h1 className="text-success">
-              <CountUp start={0} end={count} duration={3} enableScrollSpy />
-            </h1>
-            <h5 className="mt-2 text-success">{title}</h5>
+          <div className="col-6 stat-item" key={i}>
+            <div className="stat-number" lang="en" dir="ltr">
+              {count}
+              <span>+</span>
+            </div>
+            <h5 className="stat-label">{title}</h5>
           </div>
         );
       })}

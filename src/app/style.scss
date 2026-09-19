@@ -1,3 +1,5 @@
+@use "sass:meta";
+
 $theme-colors: (
   "primary-dark": #293520,
   "sage": #929d70,
@@ -21,8 +23,7 @@ $theme-colors: (
   // 343A40
   "white": #ffffff,
   // ffffff
-  "black": #615252,
-  // 000000
+  "black": #615252, // 000000
 );
 
 .text-justify {
@@ -37,3 +38,6 @@ $theme-colors: (
 
 /* import bootstrap to set changes */
 @import "~bootstrap/scss/bootstrap";
+
+// Keep the site design after Bootstrap in the compiled stylesheet.
+@include meta.load-css("style.css");
