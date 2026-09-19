@@ -1,6 +1,5 @@
 import "@fortawesome/fontawesome-svg-core/styles.css";
 
-
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "react-slideshow-image/dist/styles.css";
@@ -33,8 +32,7 @@ const englishFont = localFont({
 });
 
 export const metadata: Metadata = {
-  title:
-    "فاطمة محمد - الصحة تبدأ من التغذية السليمة - اكتشف حياتك الصحية الآن!",
+  title: "فاطمة محمد - صحتك تنمو مع كل خطوة - أبدأ رحلتك الصحية الآن!",
   description: "الموقع الخاص بأخصائية التغذية فاطمة محمد - الأردن",
   manifest: "/site.webmanifest",
   icons: {
