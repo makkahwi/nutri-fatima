@@ -12,7 +12,7 @@ export const socialLinksList = [
     icon: faWhatsapp,
     link: "https://wasap.my/962797035869",
     label: "عبر الواتس اب في أي وقت",
-    color: "#2f7d4f",
+    color: "var(--brand)",
     common: true,
   },
   {
@@ -20,7 +20,7 @@ export const socialLinksList = [
     icon: faEnvelope,
     link: "mailto:fatemamohammad2008@gmail.com",
     label: "راسلني على البريد الإلكتروني",
-    color: "#1f5638",
+    color: "var(--brand-dark)",
     common: true,
   },
 ];

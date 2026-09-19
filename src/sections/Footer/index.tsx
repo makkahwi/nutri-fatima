@@ -43,11 +43,11 @@ const FooterSection = () => {
         </h6>
 
         <a
-          href="https://www.alembicsoft.com/"
+          href="https://www.Suhaib.dev/"
           target="_blank"
           className="text-center text-success"
         >
-          <small>تصميم وتنفيذ الانبيق للبرمجيات</small>
+          <small>تصميم وتنفيذ صهيب أحمد</small>
         </a>
       </div>
     </Fragment>

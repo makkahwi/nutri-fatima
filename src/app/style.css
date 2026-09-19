@@ -1,13 +1,17 @@
 :root {
-  --brand: #2f7d4f;
-  --brand-dark: #1f5638;
-  --brand-soft: #e7f2eb;
-  --ink: #18221d;
-  --muted: #66736c;
+  --brand: #435237;
+  --brand-dark: #293520;
+  --secondary: #687756;
+  --sage: #929d70;
+  --olive: #969052;
+  --olive-highlight: #b7af69;
+  --brand-soft: var(--sage);
+  --ink: var(--brand-dark);
+  --muted: var(--secondary);
   --surface: #ffffff;
-  --warm: #f8f4ec;
-  --green-rgb: 47, 125, 79;
-  --green-dark-rgb: 31, 86, 56;
+  --warm: #faf7f0;
+  --green-rgb: 67, 82, 55;
+  --green-dark-rgb: 41, 53, 32;
   --line: rgba(var(--green-dark-rgb), 0.1);
   --shadow: 0 24px 70px rgba(var(--green-dark-rgb), 0.1);
 }
@@ -67,9 +71,9 @@ li::marker {
 }
 
 .btn-warning {
-  background: #f1c66a !important;
-  border-color: #f1c66a !important;
-  color: #1e2b22 !important;
+  background: var(--olive-highlight) !important;
+  border-color: var(--olive-highlight) !important;
+  color: var(--brand-dark) !important;
   border-radius: 999px;
   font-weight: 800;
 }
@@ -115,7 +119,7 @@ li::marker {
   inset: auto 0 0;
   height: 32%;
   content: "";
-  background: linear-gradient(0deg, var(--warm), rgba(248, 244, 236, 0));
+  background: linear-gradient(0deg, var(--warm), rgba(250, 247, 240, 0));
   pointer-events: none;
 }
 
@@ -130,7 +134,7 @@ li::marker {
   display: inline-flex;
   padding: 0;
   margin-bottom: 1.6rem;
-  color: #f8e4a5;
+  color: var(--olive-highlight);
   background: transparent;
   border: 0;
   border-radius: 0;
@@ -331,7 +335,7 @@ li::marker {
 .resource-item h5::before {
   content: "↗";
   margin-left: 0.55rem;
-  color: #d0a33d;
+  color: var(--olive);
 }
 
 .contact-chip {
@@ -368,7 +372,7 @@ li::marker {
 .gallery-break {
   height: min(62vh, 620px);
   background:
-    linear-gradient(180deg, rgba(248, 244, 236, 0.06), rgba(248, 244, 236, 0.34)),
+    linear-gradient(180deg, rgba(250, 247, 240, 0.06), rgba(250, 247, 240, 0.34)),
     url("/images/gallery/BG.jpeg") center / cover no-repeat;
 }
 
@@ -400,7 +404,7 @@ li::marker {
 }
 
 ::-webkit-scrollbar-track {
-  background: #e5e5e5;
+  background: var(--sage);
 }
 
 ::-webkit-scrollbar-thumb {
