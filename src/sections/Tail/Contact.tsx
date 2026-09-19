@@ -26,15 +26,45 @@ export const socialLinksList = [
 ];
 
 const ContactSection = () => (
-  <PageSection title="لنزرع بداية جديدة" id="contact" aboveTitle={<span className="eyebrow section-eyebrow" lang="en" dir="ltr">YOUR NEXT CHAPTER</span>}>
+  <PageSection
+    title="لنزرع بداية جديدة"
+    id="contact"
+    aboveTitle={
+      <span className="eyebrow section-eyebrow" lang="en" dir="ltr">
+        YOUR NEXT CHAPTER
+      </span>
+    }
+  >
     <div className="contact-layout">
       <div className="contact-intro">
-        <h3>خطوتك الأولى تبدأ<br />بحديث بسيط.</h3>
-        <p>احكِ لي عن أهدافك وتجاربك. نراجع عاداتك ووضعك الصحي معًا، ونبني خطة تناسبك.</p>
-        <ul className="consultation-list"><li>نفهم روتينك واحتياجاتك</li><li>نحدد أهدافًا واقعية</li><li>نرسم خطوتك القادمة</li></ul>
-        <div className="contact-links">{socialLinksList.map(({ name, icon, link, label }) => <a key={name} href={link} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={icon} /><span>{label}</span><span aria-hidden="true">↗</span></a>)}</div>
+        <h3>
+          خطوتك الأولى تبدأ
+          <br />
+          بحديث بسيط.
+        </h3>
+        <p>
+          احكِ لي عن أهدافك وتجاربك. نراجع عاداتك ووضعك الصحي معًا، ونبني خطة
+          تناسبك.
+        </p>
+        <ul className="consultation-list">
+          <li>نفهم روتينك واحتياجاتك</li>
+          <li>نحدد أهدافًا واقعية</li>
+          <li>نرسم خطوتك القادمة</li>
+        </ul>
+        <div className="contact-links">
+          {socialLinksList.map(({ name, icon, link, label }) => (
+            <a key={name} href={link} target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon icon={icon} />
+              <span>{label}</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+          ))}
+        </div>
       </div>
-      <div className="contact-form-panel"><h3>يسعدني أن أسمع منك</h3><ContactForm /></div>
+      <div className="contact-form-panel">
+        <h3>يسعدني أن أسمع منك</h3>
+        <ContactForm />
+      </div>
     </div>
   </PageSection>
 );

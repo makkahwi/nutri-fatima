@@ -3,8 +3,9 @@
 import CountUp from "react-countup";
 
 const NumberCounters = () => {
+  const experienceYears = new Date().getFullYear() - 2019;
   const stats = [
-    { title: "سنوات خبرة", count: 7 },
+    { title: "سنوات خبرة", count: experienceYears },
     { title: "مراجع", count: 400 },
   ];
 

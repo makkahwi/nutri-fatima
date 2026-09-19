@@ -36,6 +36,22 @@ export const metadata: Metadata = {
   title:
     "فاطمة محمد - الصحة تبدأ من التغذية السليمة - اكتشف حياتك الصحية الآن!",
   description: "الموقع الخاص بأخصائية التغذية فاطمة محمد - الأردن",
+  manifest: "/site.webmanifest",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon-16x16.png", type: "image/png", sizes: "16x16" },
+      { url: "/favicon-32x32.png", type: "image/png", sizes: "32x32" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png", type: "image/png", sizes: "180x180" },
+    ],
+  },
+  appleWebApp: {
+    capable: true,
+    title: "فاطمة محمد",
+    statusBarStyle: "default",
+  },
 };
 
 export const revalidate = 60 * 60 * 24 * 7; // seconds * minutes * hours * days
@@ -43,10 +59,6 @@ export const revalidate = 60 * 60 * 24 * 7; // seconds * minutes * hours * days
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html dir="rtl" lang="ar">
-      <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-      </head>
-
       <body className={`${arabicFont.variable} ${englishFont.variable}`}>
         <main>{children}</main>
 

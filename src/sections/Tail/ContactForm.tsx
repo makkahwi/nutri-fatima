@@ -1,11 +1,10 @@
 "use client";
 
-import { sendContacts } from "@/api";
-import { FormEvent, useState } from "react";
+import { FormEvent } from "react";
+
+const WHATSAPP_NUMBER = "962797035869";
 
 const ContactForm = () => {
-  const [isSending, setIsSending] = useState(false);
-
   const inputs = [
     { name: "name", title: "الاسم", type: "text", required: true },
     {
@@ -14,12 +13,12 @@ const ContactForm = () => {
       type: "email",
       required: false,
     },
-    { name: "phone", title: "رقم الهاتف", type: "tel", required: true },
     {
       name: "subject",
       title: "عنوان الرسالة",
       type: "text",
       required: false,
+      fullWidth: true,
     },
     {
       name: "message",
@@ -30,13 +29,11 @@ const ContactForm = () => {
     },
   ];
 
-  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (isSending) return;
-
     const form = e.currentTarget;
-    const values = inputs.reduce(
+    const values = inputs.reduce<Record<string, string>>(
       (final, current) => ({
         ...final,
         [current.name]: form.elements.namedItem(current.name)
@@ -46,17 +43,20 @@ const ContactForm = () => {
       {},
     );
 
-    setIsSending(true);
+    const message = [
+      `الاسم: ${values.name}`,
+      values.email && `البريد الإلكتروني: ${values.email}`,
+      values.subject && `عنوان الرسالة: ${values.subject}`,
+      `محتوى الرسالة: ${values.message}`,
+    ]
+      .filter(Boolean)
+      .join("\n");
 
-    try {
-      await sendContacts({ ...values, timestamp: new Date().toISOString() });
-      form.reset();
-      alert("تم إرسال رسالتك بنجاح. شكرًا لتواصلك.");
-    } catch {
-      alert("تعذر إرسال الرسالة. يرجى المحاولة مرة أخرى.");
-    } finally {
-      setIsSending(false);
-    }
+    window.open(
+      `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`,
+      "_blank",
+      "noopener,noreferrer",
+    );
   };
 
   return (
@@ -95,11 +95,8 @@ const ContactForm = () => {
           <button
             className="btn btn-success p-3 px-4 text-white w-100"
             type="submit"
-            disabled={isSending}
           >
-            <h6 className="text-center p-0 m-0">
-              {isSending ? "جاري الإرسال..." : "تواصلوا الآن"}
-            </h6>
+            <h6 className="text-center p-0 m-0">تواصلوا عبر واتساب</h6>
           </button>
         </div>
       </div>
