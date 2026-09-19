@@ -32,8 +32,13 @@ const englishFont = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "فاطمة محمد - صحتك تنمو مع كل خطوة - أبدأ رحلتك الصحية الآن!",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://fatimamohammad.com"),
+  title: { default: "فاطمة محمد | تغذية صحية بلا حرمان", template: "%s | فاطمة محمد" },
   description: "الموقع الخاص بأخصائية التغذية فاطمة محمد - الأردن",
+  keywords: ["تغذية صحية", "أخصائية تغذية", "نظام غذائي متوازن", "موسوعة التغذية", "الأردن"],
+  authors: [{ name: "فاطمة محمد" }],
+  alternates: { canonical: "/" },
+  openGraph: { type: "website", locale: "ar_JO", siteName: "فاطمة محمد", title: "فاطمة محمد | تغذية صحية بلا حرمان", description: "تغذية متوازنة ومحتوى عربي موثق يساعدك على بناء نمط صحي قابل للاستمرار." },
   manifest: "/site.webmanifest",
   icons: {
     icon: [

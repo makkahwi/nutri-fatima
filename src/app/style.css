@@ -1003,3 +1003,127 @@ textarea.form-control {
     transition: none !important;
   }
 }
+
+/* Nutrition encyclopedia */
+.pedia-page,
+.article-page {
+  background: #faf7f0;
+  color: #293520;
+}
+.pedia-shell,
+.article-shell {
+  width: min(1160px, calc(100% - 3rem));
+  margin-inline: auto;
+}
+.pedia-hero {
+  min-height: 660px;
+  display: flex;
+  align-items: end;
+  padding: 185px 0 90px;
+  background: radial-gradient(circle at 18% 20%, rgba(183,175,105,.28), transparent 30%), #293520;
+  color: #fff;
+}
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .55rem;
+  align-items: center;
+  margin-bottom: 4rem;
+  font-size: .72rem;
+  color: rgba(255,255,255,.58);
+}
+.breadcrumbs a { color: inherit; text-decoration: none; }
+.pedia-kicker {
+  margin: 0 0 1rem;
+  color: #969052;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+}
+.pedia-hero h1 {
+  max-width: 850px;
+  margin: 0 0 1.5rem;
+  font-size: clamp(2.5rem, 6vw, 5.2rem);
+  font-weight: 600;
+  line-height: 1.2;
+}
+.pedia-hero > div > p:not(.pedia-kicker) {
+  max-width: 680px;
+  color: rgba(255,255,255,.74);
+  font-size: 1.05rem;
+  line-height: 2;
+}
+.pedia-trust { display: flex; flex-wrap: wrap; gap: 1.7rem; margin-top: 2.3rem; font-size: .7rem; }
+.pedia-trust span::before { content: "✓"; margin-inline-end: .45rem; color: #b7af69; }
+.pedia-content { padding-block: 100px; }
+.pedia-heading { display: grid; grid-template-columns: 1fr 1fr; align-items: end; gap: 3rem; margin-bottom: 2.3rem; }
+.pedia-heading h2,
+.article-related h2 { font-size: clamp(2rem, 4vw, 3.5rem); margin: 0; font-weight: 600; }
+.pedia-heading > p { margin: 0; max-width: 540px; color: #687756; line-height: 1.9; }
+.category-row { display: flex; flex-wrap: wrap; gap: .6rem; padding-block: 1.2rem 3rem; border-top: 1px solid rgba(67,82,55,.2); }
+.category-row span { border: 1px solid rgba(67,82,55,.25); padding: .55rem .9rem; border-radius: 2rem; font-size: .66rem; }
+.pedia-grid { display: grid; grid-template-columns: repeat(2, 1fr); border-top: 1px solid rgba(67,82,55,.2); }
+.pedia-card { position: relative; min-height: 340px; padding: 2.3rem; border-bottom: 1px solid rgba(67,82,55,.2); }
+.pedia-card:nth-child(odd) { border-inline-end: 1px solid rgba(67,82,55,.2); }
+.pedia-card-number { position: absolute; inset-inline-end: 2rem; top: 2rem; color: #b7af69; font: 500 1rem var(--font-english); }
+.pedia-card-meta { color: #969052; font-size: .68rem; }
+.pedia-card h2 { max-width: 80%; margin: 2.1rem 0 1rem; font-size: 1.5rem; line-height: 1.55; }
+.pedia-card h2 a { color: inherit; text-decoration: none; }
+.pedia-card > p:not(.pedia-card-meta) { color: #687756; line-height: 1.9; font-size: .86rem; }
+.pedia-card-link { position: absolute; bottom: 2.2rem; color: #435237; font-weight: 600; font-size: .78rem; text-decoration: none; }
+.editorial-note { display: grid; grid-template-columns: 180px 1fr; gap: 2rem; padding: 2.3rem; margin-bottom: 100px; background: #e9e5d7; }
+.editorial-note p { margin: 0; line-height: 1.9; font-size: .85rem; }
+.pedia-preview-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(67,82,55,.2); border: 1px solid rgba(67,82,55,.2); }
+.pedia-preview { padding: 2rem; background: #faf7f0; }
+.pedia-preview small { color: #969052; }
+.pedia-preview h3 { margin: 1.2rem 0; font-size: 1.25rem; line-height: 1.5; }
+.pedia-preview p { color: #687756; line-height: 1.8; font-size: .8rem; }
+.pedia-preview a { color: #435237; font-weight: 600; font-size: .75rem; text-decoration: none; }
+.pedia-all-link { border-radius: 0; padding: .85rem 1.5rem; }
+.article-header { padding: 165px 0 75px; background: #293520; color: white; }
+.article-header .breadcrumbs { margin-bottom: 3.3rem; }
+.article-header h1 { max-width: 850px; margin: 0 0 1.2rem; font-size: clamp(2.4rem, 5vw, 4.5rem); line-height: 1.25; font-weight: 600; }
+.article-deck { max-width: 760px; color: rgba(255,255,255,.7); line-height: 1.9; font-size: 1rem; }
+.article-byline { display: flex; flex-wrap: wrap; gap: .7rem 1.8rem; padding-top: 2rem; margin-top: 2.2rem; border-top: 1px solid rgba(255,255,255,.15); color: rgba(255,255,255,.6); font-size: .68rem; }
+.article-layout { display: grid; grid-template-columns: minmax(0, 760px) 250px; justify-content: space-between; gap: 5rem; padding-block: 85px 110px; }
+.article-body { font-size: .98rem; line-height: 2.15; }
+.article-intro { font-size: 1.22rem; line-height: 2; color: #435237; }
+.article-body section { scroll-margin-top: 120px; margin-top: 4rem; }
+.article-body h2 { margin-bottom: 1.4rem; font-size: 1.75rem; font-weight: 600; }
+.article-body li { margin-bottom: .65rem; padding-inline-start: .4rem; }
+.article-body li::marker { color: #969052; }
+.takeaway { margin: 3rem 0 4.5rem; padding: 1.8rem 2rem; border-inline-start: 4px solid #b7af69; background: #efecdf; }
+.takeaway span { color: #969052; font-size: .7rem; font-weight: 700; }
+.takeaway p { margin: .6rem 0 0; }
+.article-sidebar { font-size: .72rem; }
+.article-sidebar > div { position: sticky; top: 120px; padding-top: 1rem; border-top: 2px solid #435237; }
+.article-sidebar strong { display: block; margin-bottom: 1rem; }
+.article-sidebar a { display: block; padding: .65rem 0; border-bottom: 1px solid rgba(67,82,55,.15); color: #687756; text-decoration: none; }
+.article-sidebar > p { margin-top: 2rem; color: #8b8f81; line-height: 1.8; }
+.article-faq details { border-top: 1px solid rgba(67,82,55,.2); padding: 1.25rem 0; }
+.article-faq details:last-child { border-bottom: 1px solid rgba(67,82,55,.2); }
+.article-faq summary { cursor: pointer; font-weight: 600; }
+.article-faq details p { color: #687756; }
+.article-sources ol { padding: 0; list-style-position: inside; }
+.article-sources li { display: grid; grid-template-columns: 1fr auto; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid rgba(67,82,55,.15); }
+.article-sources a { color: #435237; font-weight: 600; }
+.article-sources li span, .source-note { color: #8b8f81; font-size: .7rem; }
+.source-note { margin-top: 1.4rem; }
+.article-related { padding: 90px 0 110px; background: #e9e5d7; }
+.related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2.5rem; }
+.related-grid a { min-height: 200px; display: flex; flex-direction: column; padding: 1.5rem; background: #faf7f0; color: #293520; text-decoration: none; }
+.related-grid small { color: #969052; }
+.related-grid strong { margin-top: 1rem; line-height: 1.6; }
+.related-grid span { margin-top: auto; font-size: .7rem; }
+@media (max-width: 768px) {
+  .pedia-shell, .article-shell { width: min(100% - 2rem, 1160px); }
+  .pedia-hero { min-height: 580px; padding-top: 145px; }
+  .breadcrumbs { margin-bottom: 2.5rem; }
+  .pedia-heading, .editorial-note { grid-template-columns: 1fr; gap: 1rem; }
+  .pedia-grid, .pedia-preview-grid, .related-grid { grid-template-columns: 1fr; }
+  .pedia-card:nth-child(odd) { border-inline-end: 0; }
+  .pedia-card { min-height: 320px; padding-inline: 1rem; }
+  .article-layout { grid-template-columns: 1fr; padding-top: 55px; }
+  .article-sidebar { display: none; }
+  .article-sources li { grid-template-columns: 1fr; gap: .2rem; }
+}

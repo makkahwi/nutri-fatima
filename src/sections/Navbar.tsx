@@ -33,7 +33,7 @@ const NavbarComp = () => {
     >
       <Container>
         <NavbarBrand
-          href="#home"
+          href="/#home"
           className="brand-lockup"
           role="button"
         >
@@ -53,7 +53,7 @@ const NavbarComp = () => {
           <Nav className="me-auto" navbar>
             {links.map(({ title, link }, i) => (
               <NavLink
-                href={`#${link}`}
+                href={`/#${link}`}
                 className="site-nav-link"
                 role="button"
                 key={i}

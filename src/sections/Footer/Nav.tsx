@@ -11,7 +11,7 @@ const FooterNav = () => {
         <Nav className="mx-auto">
           {links.map(({ title, link }, i) => (
             <NavItem key={i}>
-              <NavLink href={`#${link}`} role="button" className="text-white">
+              <NavLink href={`/#${link}`} role="button" className="text-white">
                 {title}
               </NavLink>
             </NavItem>
