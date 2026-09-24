@@ -6,6 +6,7 @@ import "react-slideshow-image/dist/styles.css";
 import "./style.scss";
 
 import Script from "next/script";
+import { getSiteUrl } from "./site-url";
 
 const arabicFont = localFont({
   src: [
@@ -31,9 +32,18 @@ const englishFont = localFont({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  title: "فاطمة محمد - صحتك تنمو مع كل خطوة - أبدأ رحلتك الصحية الآن!",
-  description: "الموقع الخاص بأخصائية التغذية فاطمة محمد - الأردن",
+const baseMetadata: Metadata = {
+  title: "فاطمة محمد | أخصائية تغذية سريرية وحميات في الأردن",
+  description:
+    "فاطمة محمد أخصائية تغذية سريرية وحميات في الأردن. تقدم استشارات تغذية وخططًا غذائية شخصية لخسارة الوزن وزيادته بشكل صحي وبناء عادات غذائية متوازنة.",
+  openGraph: {
+    type: "profile",
+    locale: "ar_JO",
+    title: "فاطمة محمد | أخصائية تغذية في الأردن",
+    description: "استشارات تغذية سريرية وحميات وخطط غذائية شخصية مع فاطمة محمد في الأردن.",
+    images: [{ url: "/images/logo/logo-c.png", alt: "شعار فاطمة محمد أخصائية التغذية" }],
+  },
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large" } },
   manifest: "/site.webmanifest",
   icons: {
     icon: [
@@ -52,12 +62,49 @@ export const metadata: Metadata = {
   },
 };
 
+export function generateMetadata(): Metadata {
+  const siteUrl = getSiteUrl();
+  return {
+    ...baseMetadata,
+    metadataBase: new URL(siteUrl),
+    alternates: { canonical: siteUrl },
+    openGraph: { ...baseMetadata.openGraph, url: siteUrl, siteName: "فاطمة محمد" },
+    twitter: {
+      card: "summary_large_image",
+      title: "فاطمة محمد | أخصائية تغذية في الأردن",
+      description: "استشارات تغذية سريرية وحميات وخطط غذائية شخصية مع فاطمة محمد في الأردن.",
+      images: ["/images/logo/logo-c.png"],
+    },
+  };
+}
+
 export const revalidate = 60 * 60 * 24 * 7; // seconds * minutes * hours * days
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
+  const siteUrl = getSiteUrl();
   return (
     <html dir="rtl" lang="ar">
       <body className={`${arabicFont.variable} ${englishFont.variable}`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "@id": `${siteUrl}/#fatima-mohammad`,
+              url: siteUrl,
+              name: "فاطمة محمد",
+              alternateName: "Fatima Mohammad",
+              jobTitle: "أخصائية تغذية سريرية وحميات",
+              description: "أخصائية تغذية سريرية وحميات في الأردن، تقدم استشارات وخطط تغذية شخصية.",
+              email: "fatemamohammad2008@gmail.com",
+              telephone: "+962797035869",
+              address: { "@type": "PostalAddress", addressCountry: "JO" },
+              knowsAbout: ["التغذية السريرية", "الحميات", "التثقيف الغذائي"],
+              alumniOf: { "@type": "CollegeOrUniversity", name: "الجامعة الهاشمية" },
+            }).replace(/</g, "\\u003c"),
+          }}
+        />
         <main>{children}</main>
 
         <Script

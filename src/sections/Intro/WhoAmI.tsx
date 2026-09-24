@@ -13,7 +13,7 @@ const WhoAmISection = async () => {
 
   return (
     <PageSection
-      title="أهلًا، أنا فاطمة"
+      title="فاطمة محمد، أخصائية تغذية سريرية وحميات في الأردن"
       aboveTitle={
         <span className="eyebrow section-eyebrow" lang="en" dir="ltr">
           YOUR PARTNER IN WELLNESS

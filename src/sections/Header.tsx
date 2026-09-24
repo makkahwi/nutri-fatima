@@ -9,12 +9,13 @@ const HeaderSection = () => (
       <p className="hero-kicker">صحتك تنمو · مع كل خطوة</p>
       <h1 className="hero-title" id="hero-title">
         فاطمة محمد
-        <h2>
-          أخصائية <span>تغذية</span>
-        </h2>
+        <span className="d-block">
+          أخصائية <span>تغذية</span> في الأردن
+        </span>
       </h1>
       <p className="hero-subtitle">
-        تغذية تشبهك، وخطة تنمو معك. نبدأ من حياتك اليومية لنصنع عادات متوازنة،
+        أنا فاطمة محمد، أخصائية تغذية سريرية وحميات في الأردن. أقدم استشارات
+        تغذية وخططًا غذائية شخصية تنطلق من حياتك اليومية لتبني عادات متوازنة،
         دون حرمان أو تعقيد.
       </p>
       <div className="hero-actions">
